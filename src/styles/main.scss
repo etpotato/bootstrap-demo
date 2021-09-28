@@ -1,6 +1,4 @@
-@import "variables";
-@import "normalize";
-@import "mixins";
-@import "fonts";
-@import "scaffold";
-@import "blocks/*";
+@import "_mixins.scss";
+@import "_fonts.scss";
+@import "custom.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";

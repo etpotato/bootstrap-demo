@@ -3,13 +3,13 @@ import del from 'del';
 import rename from 'gulp-rename';
 import sourcemap from 'gulp-sourcemaps';
 import browserSync from 'browser-sync';
-import twig from 'gulp-twig';
 import htmlmin from 'gulp-htmlmin';
 import svgsprite from 'gulp-svg-sprite';
 import inject from 'gulp-inject';
 import plumber from 'gulp-plumber';
 import sassGlob from 'gulp-sass-glob';
 import sass from 'gulp-dart-sass';
+import purgecss from 'gulp-purgecss';
 import postcss from 'gulp-postcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import cssnano from 'cssnano';
@@ -85,8 +85,7 @@ const html = () => {
   const fileContents = (filePath, file) => {
     return file.contents.toString();
   };
-  return gulp.src('./src/*.twig')
-    .pipe(twig())
+  return gulp.src('./src/*.html')
     .pipe(inject(svgs, { transform: fileContents }))
     .pipe(htmlmin({
       collapseWhitespace:  process.env.NODE_ENV === 'production' ? true : false,
@@ -102,6 +101,9 @@ const styles = () => {
     .pipe(sourcemap.init())
     .pipe(sassGlob())
     .pipe(sass())
+    .pipe(purgecss({
+      content: ['./src/**/*.html'],
+    }))
     .pipe(postcss([
       postcssPresetEnv(),
       cssnano(),
