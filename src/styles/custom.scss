@@ -1,1 +1,52 @@
-$font-family-base: "Neris", "Arial", sans-serif;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.page {
+  font-weight: 300;
+}
+
+.ls-lg {
+  letter-spacing: 0.4em;
+}
+
+.header-navbar {
+  position: relative;
+}
+
+.header-navbar-collapse {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  background-color: $white;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
+  @include media-breakpoint-up(lg) {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.header-nav-item {
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    &.active::before {
+      content: "";
+      position: absolute;
+      left: 0.4rem;
+      right: 0.4rem;
+      bottom: 0;
+      height: 2px;
+      background-color: #ee3124;
+    }
+  }
+}
+
+.navbar-toggler-custom {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("../img/menu.svg");
+}

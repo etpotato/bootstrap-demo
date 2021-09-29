@@ -100,7 +100,9 @@ const styles = () => {
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sassGlob())
-    .pipe(sass())
+    .pipe(sass({
+      quietDeps: true,
+    }))
     .pipe(purgecss({
       content: ['./src/**/*.html'],
     }))
@@ -187,7 +189,7 @@ const server = (done) => {
 
 /* watcher */
 const watcher = () => {
-  gulp.watch('./src/**/*.twig', html);
+  gulp.watch('./src/**/*.html', gulp.series(html, styles));
   gulp.watch('./src/styles/**/*.scss', styles);
   gulp.watch('./src/**/*.js', js);
   gulp.watch('./src/fonts/*', copyFonts);

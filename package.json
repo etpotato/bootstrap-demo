@@ -47,7 +47,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "inputmask": "^5.0.6"
+    "inputmask": "^5.0.6",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
   },
   "browserslist": [
     "last 2 versions",
