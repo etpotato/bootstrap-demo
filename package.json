@@ -6,7 +6,7 @@
     "eslint": "eslint src/js/",
     "test": "npm run editorconfig && npm run stylelint && npm run eslint",
     "start": "gulp",
-    "build": "npm run test && cross-env NODE_ENV=production gulp build"
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -23,7 +23,6 @@
     "gulp": "^4.0.2",
     "gulp-dart-sass": "^1.0.2",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^8.0.0",
     "gulp-inject": "^5.0.5",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.1",
@@ -32,12 +31,6 @@
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprite": "^1.5.0",
-    "gulp-twig": "^1.2.0",
-    "gulp-webp": "^4.0.1",
-    "imagemin-gifsicle": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "imagemin-svgo": "^9.0.0",
     "postcss": "^8.3.6",
     "postcss-preset-env": "^6.7.0",
     "purgecss": "^4.0.3",
@@ -59,7 +52,7 @@
   "editorconfig-cli": [
     "./*.json",
     "./*.js",
-    "./src/*.twig",
+    "./src/*.html",
     "./src/img/sprite/*.svg",
     "./src/js/**/*.js",
     "./src/styles/**/*.{sass,scss,pcss,less,css}"

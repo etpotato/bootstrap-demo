@@ -143,37 +143,6 @@ const copyImages = () => {
 
 const copy = gulp.parallel(copyAssets, copyFonts, copyImages);
 
-/* images */
-const webp = () => {
-  return gulp.src('./src/img/**/*.{png,jpg}', {ignore: './src/img/favicon/*'})
-  .pipe(gulpWebp())
-  .pipe(gulp.dest('./build/img/'));
-};
-
-const optimizeImages = () => {
-  return gulp.src('./src/img/**/*', {ignore: './src/img/sprite/'})
-  .pipe(imagemin([
-    gifsicle(),
-    mozjpeg({ quality: 75, progressive: true }),
-    optipng({ optimizationLevel: 3 }),
-    svgo({
-      plugins: [
-        { name: 'removeViewBox',
-          active: false,
-        },
-        { name: 'removeXMLNS',
-          active: false,
-        },
-        {
-          name: 'removeDimensions',
-          active: false,
-        },
-      ],
-    }),
-  ]))
-  .pipe(gulp.dest('./build/img/'));
-};
-
 /* server */
 const server = (done) => {
   sync.init({
@@ -193,19 +162,19 @@ const watcher = () => {
   gulp.watch('./src/styles/**/*.scss', styles);
   gulp.watch('./src/**/*.js', js);
   gulp.watch('./src/fonts/*', copyFonts);
-  gulp.watch('./src/img/**/*', {ignore: './src/img/sprite/'}, gulp.parallel(copyImages, webp));
+  gulp.watch('./src/img/**/*', {ignore: './src/img/sprite/'}, gulp.parallel(copyImages));
   gulp.watch('./src/img/sprite/*.svg', html);
 }
 
 /* export */
 export default gulp.series(
   clear,
-  gulp.parallel(html, styles, copy, webp, js),
+  gulp.parallel(html, styles, copy, js),
   server,
   watcher,
 );
 
 export const build = gulp.series(
   clear,
-  gulp.parallel(html, styles, copyAssets, copyFonts, optimizeImages, webp, js),
+  gulp.parallel(html, styles, copy, js),
 );
