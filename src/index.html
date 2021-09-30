@@ -18,40 +18,120 @@
 </head>
 <body class="page">
   <header class="header bg-white shadow-sm mt-xs">
+    <div class="d-none d-lg-block container-fluid header-top border-bottom">
+      <div class="header-top-wrap pt-2 pb-2 pr-lg-5 pl-lg-5 row">
+        <ul class="nav align-items-center">
+          <li class="nav-item border-right">
+            <a class="nav-link ls-md pl-lg-0 pt-0 pb-0 text-uppercase font-weight-600" href="#">consectetur adipis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ls-md pt-0 pb-0 text-uppercase" href="#">consect</a>
+          </li>
+        </ul>
+        <ul class="nav ml-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link pl-lg-0 pt-0 pb-0 font-weight-600" href="#">Accusium</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pt-0 pb-0 font-weight-600" href="#">Ccusantium</a>
+          </li>
+          <li class="nav-item">
+            <div class="selectlist js-selectlist">
+              <div class="selectlist__tab-wrap">
+                <button class="selectlist__tab-toggle js-selectlist-toggle" type="button" aria-expanded="false" aria-controls="selectlist__tablist">
+                  <img class="selectlist__tab-toggle-img js-selectlist-toggle-img" src="img/flag-1.svg">
+                  <span class="selectlist__tab-toggle-arrow"></span>
+                </button>
+                <ul class="selectlist__tab-list js-selectlist-tablist" id="selectlist__tablist">
+                  <li class="selectlist__tab-item">
+                      <button class="selectlist__tab-button js-selectlist-choice" type="button">
+                        <img class="selectlist__tab-image" src="img/flag-1.svg" alt="ru">
+                      </button>
+                  </li>
+                  <li class="selectlist__tab-item">
+                      <button class="selectlist__tab-button js-selectlist-choice" type="button">
+                        <img class="selectlist__tab-image" src="img/flag-2.svg" alt="ja">
+                      </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="container-fluid">
-      <nav class="row header-navbar navbar navbar-expand-lg pt-3 pb-3 pt-lg-0 pb-lg-0 navbar-light">
-        <a class="navbar-brand text-white text-uppercase font-weight-bold rounded-pill ls-lg pt-1 pr-5 pb-2 pl-5 bg-secondary" href="#">Logo</a>
-        <button class="navbar-toggler navbar-toggler-custom" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <nav class="row header-navbar navbar navbar-expand-lg pt-3 pb-3 pt-lg-0 pb-lg-0 pr-lg-5 pl-lg-5 navbar-light">
+        <a class="col-6 col-sm-4 col-lg-2 header-navbar-brand navbar-brand text-center text-white text-uppercase font-weight-bold rounded-pill ls-lg pt-1 pr-2 pb-2 pl-2 bg-info" href="#">Logo</a>
+        <div class="d-lg-none selectlist ml-auto mr-3 mr-md-4 js-selectlist">
+          <div class="selectlist__tab-wrap">
+            <button class="selectlist__tab-toggle js-selectlist-toggle" type="button" aria-expanded="false" aria-controls="selectlist__tablist">
+              <img class="selectlist__tab-toggle-img js-selectlist-toggle-img" src="img/flag-1.svg">
+              <span class="selectlist__tab-toggle-arrow"></span>
+            </button>
+            <ul class="selectlist__tab-list js-selectlist-tablist" id="selectlist__tablist">
+              <li class="selectlist__tab-item">
+                  <button class="selectlist__tab-button js-selectlist-choice" type="button">
+                    <img class="selectlist__tab-image" src="img/flag-1.svg" alt="ru">
+                  </button>
+              </li>
+              <li class="selectlist__tab-item">
+                  <button class="selectlist__tab-button js-selectlist-choice" type="button">
+                    <img class="selectlist__tab-image" src="img/flag-2.svg" alt="ja">
+                  </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="navbar-toggler header-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse pl-4 pr-4 header-navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item header-nav-item pt-3 pb-3">
-              <a class="nav-link text-muted" href="#">Sunt in ulpa qui offici<span class="sr-only">(current)</span></a>
+            <li class="nav-item header-nav-item pl-xl-2 pr-xl-2 pt-3 pb-3">
+              <a class="header-nav-link nav-link" href="#">Sunt in ulpa qui offici<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item header-nav-item pt-3 pb-3 active">
-              <a class="nav-link text-muted" href="#">Adeserunt mollit</a>
+            <li class="nav-item header-nav-item pl-xl-2 pr-xl-2 pt-3 pb-3">
+              <a class="header-nav-link nav-link" href="#">Adeserunt mollit</a>
             </li>
-            <li class="nav-item header-nav-item pt-3 pb-3">
-              <a class="nav-link text-muted" href="#">Tlaborumsed ut</a>
+            <li class="nav-item header-nav-item pl-xl-2 pr-xl-2 pt-3 pb-3">
+              <a class="header-nav-link nav-link" href="#">Tlaborumsed ut</a>
             </li>
-            <li class="nav-item header-nav-item pt-3 pb-3">
-              <a class="nav-link text-muted" href="#" tabindex="-1" aria-disabled="true">FAQ</a>
+            <li class="nav-item header-nav-item pl-xl-2 pr-xl-2 pt-3 pb-3">
+              <a class="header-nav-link nav-link" href="#">FAQ</a>
+            </li>
+          </ul>
+          <div class="dropdown-divider d-lg-none"></div>
+          <ul class="navbar-nav d-lg-none">
+            <li class="nav-item">
+              <a class="nav-link font-weight-600 text-uppercase" href="#">consectetur adipis</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-600 text-uppercase" href="#">consect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-600" href="#">Accusium</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-600" href="#">Ccusantium</a>
             </li>
           </ul>
         </div>
-        <button class="d-none d-lg-block btn btn-primary pt-2 pb-2 pr-4 pl-4 text-uppercase font-weight-bold" type="button">Lorem ipsum</button>
+        <button class="d-none d-lg-block btn btn-secondary pt-2 pb-2 pr-4 pl-4 text-uppercase font-weight-bold" type="button">Lorem ipsum</button>
       </nav>
-      <div class="collapse " id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-          <h5 class="text-white h4">Collapsed content</h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
-        </div>
-      </div>
     </div>
   </header>
 
-  <main class="page__main main">
+  <main class="page__main main pt-4 pt-md-5 pb-5">
     <div class="container">
-
+      <div class="row pl-md-5 pr-md-5">
+        <div class="d-xl-flex flex-column align-items-start col-12 col-xl-7 mb-5 mb-xl-0">
+          <h1 class="h3 mb-3 mb-sm-5 main-title">Ut enim minim veniam, nostrud exercitation ullamco laboris</h1>
+          <p class="mb-4 mb-sm-5 main-text">Vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</p>
+          <a class="main-btn btn btn-secondary pt-3 pb-3 pl-5 pr-5 mt-xl-auto font-weight-900 text-uppercase" href="#">Lorem ipsum dolor sit amet</a>
+        </div>
+        <div class="col-12 col-xl-5">
+          <img class="d-block img-fluid mx-auto" src="img/man.png" alt="man">
+        </div>
+      </div>
     </div>
   </main>
 
@@ -60,6 +140,7 @@
     </div>
   </footer>
 
+  <span class="show selectlist-active"></span>
   <div style="height: 0; position: absolute; visibility: hidden; width: 0;">
     <!-- inject:svg --><!-- endinject -->
   </div>
